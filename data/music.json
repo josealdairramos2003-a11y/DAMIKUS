@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Skrillex & Diplo - Mind feat. Kai",
+    "artist": "Synthwave Project",
+    "src": "assets/music/track1.mp3",
+    "cover": "assets/images/track1.jpg",
+    "lyrics": [
+      {"time": 0, "text": "🎵 You love how You push me to the point of crazy And I love when 🎵"},
+      {"time": 5, "text": "Caminando bajo las luces del viaducto urbano..."},
+      {"time": 10, "text": "Las estructuras de concreto y acero se elevan..."},
+      {"time": 15, "text": "El pulso sísmico de la gran ciudad empieza a sonar..."},
+      {"time": 20, "text": "El puente atirantado cruza la noche iluminada..."},
+      {"time": 25, "text": "🎵 [Solo de Sintetizador - Ritmo de Obra] 🎵"}
+    ]
+  },
+  {
+    "title": "SKRILLEX - Bangarang feat. Sirah",
+    "artist": "SKRILLEX - Bangarang feat. Sirah",
+    "src": "assets/music/track2.mp3",
+    "cover": "assets/images/track2.jpg",
+    "lyrics": [
+      {"time": 0, "text": "🎵 [Beats de Precisión - Revit Activo] 🎵"},
+      {"time": 4, "text": "Planos de cimentación y zapatas en la pantalla..."},
+      {"time": 8, "text": "Modelando el acero de refuerzo en tres dimensiones..."},
+      {"time": 12, "text": "El modelo 3D toma forma columna por columna..."},
+      {"time": 16, "text": "Es el cálculo estructural que resiste al tiempo..."},
+      {"time": 20, "text": "🎵 [Drop Electrónico - Vaciado de Concreto] 🎵"}
+    ]
+  },
+  {
+    "title": "Skrillex & Damian Jr. Gong Marley - Make It Bun Dem",
+    "artist": "Constructor Beats",
+    "src": "assets/music/track3.mp3",
+    "cover": "assets/images/track3.jpg",
+    "lyrics": [
+      {"time": 0, "text": "🎵 [Sonido de Lluvia y Piano - Descanso en Caseta] 🎵"},
+      {"time": 6, "text": "Un café caliente y los planos impresos sobre la mesa..."},
+      {"time": 12, "text": "El topógrafo nivela el terreno con precisión milimétrica..."},
+      {"time": 18, "text": "En la tranquilidad de la tarde que termina..."},
+      {"time": 24, "text": "La megaestructura terminada es nuestra recompensa..."},
+      {"time": 30, "text": "🎵 [Outro de Piano Relajante] 🎵"}
+    ]
+  }
+]

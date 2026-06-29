@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Damikus Web | Premium Digital Experience</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Bienvenido a Damikus Web. Explora el universo digital de Damikus: Creative Developer, UX/UI Designer y Creador. Proyectos premium, portafolio y contacto.">
+  <meta name="keywords" content="Damikus, Portfolio, Creative Developer, Diseñador UX/UI, Bento Grid, Portfolio Premium, Web Design">
+  <meta name="author" content="Damikus">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damikus.web/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://damikus.web/">
+  <meta property="og:title" content="Damikus Web | Premium Digital Experience">
+  <meta property="og:description" content="Explora el universo digital de Damikus. Proyectos premium, diseño interactivo y portafolio bento.">
+  <meta property="og:image" content="https://damikus.web/assets/images/og-share.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://damikus.web/">
+  <meta property="twitter:title" content="Damikus Web | Premium Digital Experience">
+  <meta property="twitter:description" content="Explora el universo digital de Damikus. Proyectos premium, diseño interactivo y portafolio bento.">
+  <meta property="twitter:image" content="https://damikus.web/assets/images/og-share.jpg">
+
+  <!-- PWA & Mobile Icons -->
+  <meta name="theme-color" content="#0B0B0B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org Person metadata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Damikus",
+    "jobTitle": "Creative Developer & UX/UI Designer",
+    "url": "https://damikus.web",
+    "description": "Creative Developer y Diseñador UX/UI enfocado en el desarrollo de identidades digitales premium.",
+    "sameAs": [
+      "https://github.com",
+      "https://linkedin.com",
+      "https://instagram.com"
+    ]
+  }
+  </script>
+</head>
+<body class="theme-purple dark-mode">
+
+  <!-- Custom Premium Cursor -->
+  <div id="custom-cursor" class="custom-cursor">
+    <div class="cursor-pointer"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+
+
+  <!-- 60 FPS Particle Canvas Background -->
+  <canvas id="bg-canvas" class="bg-canvas"></canvas>
+
+  <!-- Confetti/Fireworks Canvas -->
+  <canvas id="fx-canvas" class="fx-canvas"></canvas>
+
+  <!-- Scroll Progress Indicator Sidebar -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+    <div class="scroll-dots">
+      <a href="#hero" class="scroll-dot active" title="Inicio" aria-label="Volver arriba"></a>
+      <a href="#about" class="scroll-dot" title="Sobre Mí" aria-label="Ir a sección Sobre Mí"></a>
+      <a href="#projects" class="scroll-dot" title="Proyectos" aria-label="Ir a sección Proyectos"></a>
+      <a href="#gallery" class="scroll-dot" title="Galería" aria-label="Ir a sección Galería"></a>
+      <a href="#contact" class="scroll-dot" title="Contacto" aria-label="Ir a sección Contacto"></a>
+    </div>
+  </div>
+
+  <!-- Ambient Audio Source (Fallback) -->
+  <audio id="ambient-audio" loop preload="auto">
+    <!-- Tracks will be dynamically injected or fallbacks handled -->
+  </audio>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="header-logo-container" id="logo-trigger">
+      <span class="logo-text">DAMIKUS<span class="dot-blink">.</span></span>
+    </div>
+    
+    <nav class="header-nav">
+      <!-- Theme Selection Dropdown -->
+      <div class="theme-selector-wrapper">
+        <button class="icon-btn theme-dropdown-trigger" aria-label="Cambiar tema de color" title="Colores">
+          <i class="fa-solid fa-palette"></i>
+        </button>
+        <div class="theme-dropdown">
+          <button class="theme-opt" data-theme="blue" style="--opt-color: #3b82f6;"><span class="theme-dot"></span>Azul</button>
+          <button class="theme-opt" data-theme="purple" style="--opt-color: #a855f7;"><span class="theme-dot"></span>Morado</button>
+          <button class="theme-opt" data-theme="red" style="--opt-color: #ef4444;"><span class="theme-dot"></span>Rojo</button>
+          <button class="theme-opt" data-theme="green" style="--opt-color: #10b981;"><span class="theme-dot"></span>Verde</button>
+          <button class="theme-opt" data-theme="gold" style="--opt-color: #eab308;"><span class="theme-dot"></span>Dorado</button>
+          <button class="theme-opt" data-theme="pink" style="--opt-color: #ec4899;"><span class="theme-dot"></span>Rosa</button>
+        </div>
+      </div>
+
+      <!-- Dark/Light Toggle -->
+      <button id="dark-mode-toggle" class="icon-btn" aria-label="Alternar modo claro u oscuro" title="Modo Claro/Oscuro">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <!-- Music Ambient Toggle -->
+      <button id="bg-music-toggle" class="icon-btn" aria-label="Activar música de fondo" title="Música">
+        <i class="fa-solid fa-volume-xmark"></i>
+      </button>
+
+      <!-- Secret Surprise Button -->
+      <button id="surprise-btn" class="surprise-btn magnet-btn" aria-label="Efecto sorpresa mágico" title="¿Modo Sorpresa?">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Mágico</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Scrollable Wrapper -->
+  <main class="page-wrapper">
+    <div class="bento-container" id="bento-grid">
+      
+      <!-- HERO CARD -->
+      <section id="hero" class="bento-card bento-hero scale-up-anim" data-tilt>
+        <div class="spotlight"></div>
+        <div class="card-glow"></div>
+        <div class="hero-top">
+          <div class="hero-avatar-wrapper">
+            <img id="hero-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 100 100'%3E%3Crect width%3D'100%25' height%3D'100%25' fill%3D'%231A1A1A'%2F%3E%3C/svg%3E" alt="Avatar de Damikus" class="hero-avatar floating-avatar" />
+            <div class="avatar-glow"></div>
+          </div>
+          <div class="hero-details">
+            <h2 id="hero-name" class="hero-title">Damikus</h2>
+            <div class="typewriter-container">
+              <span class="typewriter-text" id="typewriter"></span><span class="cursor-bar">|</span>
+            </div>
+          </div>
+        </div>
+        <p id="hero-bio" class="hero-description"></p>
+        <div class="hero-tags-wrapper">
+          <span class="hero-tag"><i class="fa-solid fa-calculator"></i> Estructuras</span>
+          <span class="hero-tag"><i class="fa-solid fa-compass-drafting"></i> BIM Revit</span>
+          <span class="hero-tag"><i class="fa-solid fa-road"></i> Vías y Transportes</span>
+          <span class="hero-tag"><i class="fa-solid fa-trowel-bricks"></i> Gestión de Obra</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#about" class="btn primary-btn ripple-btn magnet-btn">
+            <i class="fa-solid fa-compass"></i> Explorar
+          </a>
+          <a href="#contact" class="btn secondary-btn ripple-btn magnet-btn">
+            <i class="fa-solid fa-paper-plane"></i> Contactar
+          </a>
+          <button id="save-contact-btn" class="btn outline-btn ripple-btn magnet-btn">
+            <i class="fa-solid fa-address-card"></i> Guardar contacto
+          </button>
+        </div>
+      </section>
+
+      <!-- REAL-TIME DISCORD STATUS -->
+      <article id="status-card" class="bento-card bento-status" data-tilt>
+        <div class="spotlight"></div>
+        <div class="discord-card-header">
+          <div class="discord-logo"><i class="fa-brands fa-discord"></i> status</div>
+          <div class="discord-ping">
+            <span class="ping-dot" id="discord-ping-dot"></span>
+            <span class="ping-text" id="discord-ping-text">Cargando...</span>
+          </div>
+        </div>
+        <div class="status-content">
+          <div class="status-avatar-box">
+            <img id="status-avatar" class="status-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 100 100'%3E%3Crect width%3D'100%25' height%3D'100%25' fill%3D'%231A1A1A'%2F%3E%3C/svg%3E" alt="Status Avatar" />
+            <div class="status-indicator-badge" id="status-badge"></div>
+          </div>
+          <div class="status-info">
+            <div class="status-title" id="status-text-title">Disponible</div>
+            <div class="status-desc" id="status-text-desc">Activo en la web</div>
+          </div>
+        </div>
+        <!-- Status manual override -->
+        <div class="status-controls">
+          <button class="status-selector-btn" data-status="online" title="Disponible"><span class="color-dot online"></span></button>
+          <button class="status-selector-btn" data-status="idle" title="Ocupado"><span class="color-dot idle"></span></button>
+          <button class="status-selector-btn" data-status="dnd" title="Durmiendo / No Molestar"><span class="color-dot dnd"></span></button>
+        </div>
+      </article>
+
+      <!-- DIGITAL UNIVERSE ("MI UNIVERSO") -->
+      <article id="universe-card" class="bento-card bento-universe" data-tilt>
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-globe"></i> Mi Universo</h3>
+        <ul class="universe-list" id="universe-list">
+          <!-- Populated from profile.json -->
+        </ul>
+      </article>
+
+      <!-- CLOCK & WEATHER WIDGET -->
+      <article id="time-card" class="bento-card bento-clock" data-tilt>
+        <div class="spotlight"></div>
+        <div class="clock-top">
+          <div class="clock-day" id="clock-day">Lunes</div>
+          <div class="clock-date" id="clock-date">29 de Junio</div>
+        </div>
+        <div class="clock-time" id="clock-time">12:00:00</div>
+        <div class="clock-bottom">
+          <span class="location-label"><i class="fa-solid fa-location-dot"></i> <span id="location-text">Madrid, ES</span></span>
+          <span class="weather-label" id="weather-text"><i class="fa-solid fa-cloud-sun"></i> 24°C Despejado</span>
+        </div>
+      </article>
+
+      <!-- SOCIAL MEDIA CHIPS -->
+      <section id="socials-card" class="bento-card bento-socials">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-share-nodes"></i> Redes Sociales</h3>
+        <div class="socials-grid" id="socials-grid-container">
+          <!-- Populated from socials.json -->
+        </div>
+      </section>
+
+      <!-- ABOUT ME SECTION -->
+      <section id="about" class="bento-card bento-about">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-user"></i> Sobre Mí</h3>
+        <div class="about-content">
+          <p id="about-text-content">Cargando...</p>
+          <div class="about-quote-box">
+            <span class="quote-mark">“</span>
+            <p id="about-quote-text" class="quote-text"></p>
+            <span class="quote-author">— Damikus</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS ("LOGROS") -->
+      <article id="achievements-card" class="bento-card bento-achievements">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-trophy"></i> Logros & Certificaciones</h3>
+        <div class="achievements-grid" id="achievements-grid">
+          <!-- Populated from certificates.json -->
+        </div>
+      </article>
+
+      <!-- CAREER TIMELINE -->
+      <section id="timeline-card" class="bento-card bento-timeline">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-timeline"></i> Mi Trayectoria</h3>
+        <div class="timeline" id="timeline-container">
+          <!-- Populated from timeline.json -->
+        </div>
+      </section>
+
+      <!-- MUSIC PLAYER -->
+      <article id="music-card" class="bento-card bento-music" data-tilt>
+        <div class="spotlight"></div>
+        <div class="music-header">
+          <span class="music-heading"><i class="fa-solid fa-music"></i> Reproductor</span>
+          <span class="music-status-visual" id="vinyl-status">En pausa</span>
+        </div>
+        <div class="music-body">
+          <div class="vinyl-wrapper">
+            <div class="vinyl-disc" id="vinyl-disc">
+              <img id="music-cover" class="vinyl-cover" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 100 100'%3E%3Crect width%3D'100%25' height%3D'100%25' fill%3D'%231A1A1A'%2F%3E%3C/svg%3E" alt="Cover Art" />
+              <div class="vinyl-center"></div>
+            </div>
+            <!-- Synced lyrics overlay -->
+            <div class="lyrics-container">
+              <div class="lyrics-scroll" id="lyrics-scroll">
+                <p class="lyric-line active" id="current-lyric">Cargando música...</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="music-info">
+            <h4 id="music-title" class="music-title">Midnight City Pulse</h4>
+            <p id="music-artist" class="music-artist">Synthwave Project</p>
+          </div>
+
+          <!-- Canvas Audio Visualizer -->
+          <canvas id="music-visualizer" class="music-visualizer" width="300" height="40"></canvas>
+
+          <div class="music-controls">
+            <!-- Timeline progress -->
+            <div class="music-timeline">
+              <span class="time-label" id="music-time-current">0:00</span>
+              <div class="progress-bar-container" id="music-progress-container">
+                <div class="progress-bar-fill" id="music-progress-fill"></div>
+              </div>
+              <span class="time-label" id="music-time-total">3:00</span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="controls-row">
+              <button id="prev-track" class="music-ctrl-btn" aria-label="Canción anterior"><i class="fa-solid fa-backward-step"></i></button>
+              <button id="play-pause" class="music-ctrl-btn play-btn" aria-label="Reproducir o pausar"><i class="fa-solid fa-play"></i></button>
+              <button id="next-track" class="music-ctrl-btn" aria-label="Siguiente canción"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+            
+            <div class="volume-row">
+              <i class="fa-solid fa-volume-low"></i>
+              <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider" aria-label="Control de volumen" />
+              <i class="fa-solid fa-volume-high"></i>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SKILLS INVENTORY -->
+      <section id="skills-card" class="bento-card bento-skills">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-bolt"></i> Habilidades</h3>
+        <div class="skills-wrapper" id="skills-container">
+          <!-- Populated from skills.json -->
+        </div>
+      </section>
+
+      <!-- PROJECTS SHOWCASE -->
+      <section id="projects" class="bento-card bento-projects">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-code-fork"></i> Proyectos Destacados</h3>
+        <div class="projects-list-wrapper" id="projects-list">
+          <!-- Populated from projects.json -->
+        </div>
+      </section>
+
+      <!-- MASONRY GALLERY -->
+      <section id="gallery" class="bento-card bento-gallery">
+        <div class="spotlight"></div>
+        <div class="gallery-header">
+          <h3 class="card-title"><i class="fa-solid fa-images"></i> Galería Premium</h3>
+          <div class="gallery-filters" id="gallery-filters-container">
+            <button class="gallery-filter-btn active" data-filter="all">Todos</button>
+            <button class="gallery-filter-btn" data-filter="Viajes">Viajes</button>
+            <button class="gallery-filter-btn" data-filter="Trabajo">Trabajo</button>
+            <button class="gallery-filter-btn" data-filter="Eventos">Eventos</button>
+            <button class="gallery-filter-btn" data-filter="Amigos">Amigos</button>
+          </div>
+        </div>
+        <div class="gallery-masonry" id="gallery-masonry-grid">
+          <!-- Populated from gallery.json -->
+        </div>
+      </section>
+
+      <!-- QR CODE & SHARE CARD -->
+      <article id="share-card" class="bento-card bento-share" data-tilt>
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-qrcode"></i> Compartir Perfil</h3>
+        <div class="share-body">
+          <div class="qr-code-wrapper" id="qr-code-wrapper">
+            <!-- Simulated QR code canvas or image fallback -->
+            <div id="qr-code-canvas-container" class="qr-canvas-box"></div>
+          </div>
+          <div class="share-actions">
+            <button id="copy-link-btn" class="btn secondary-btn ripple-btn magnet-btn">
+              <i class="fa-solid fa-link"></i> Copiar Enlace
+            </button>
+            <button id="web-share-btn" class="btn outline-btn ripple-btn magnet-btn">
+              <i class="fa-solid fa-share-nodes"></i> Compartir
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- STATISTICS WIDGET -->
+      <article id="stats-card" class="bento-card bento-stats">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-chart-simple"></i> Estadísticas</h3>
+        <div class="stats-counters-grid">
+          <div class="stat-counter-box">
+            <span class="stat-number" id="stat-days">0</span>
+            <span class="stat-label">Días de código</span>
+          </div>
+          <div class="stat-counter-box">
+            <span class="stat-number" id="stat-years">0</span>
+            <span class="stat-label">Años de exp</span>
+          </div>
+          <div class="stat-counter-box">
+            <span class="stat-number" id="stat-visitors">0</span>
+            <span class="stat-label">Visitas totales</span>
+          </div>
+          <div class="stat-counter-box">
+            <span class="stat-number" id="stat-timer">00:00</span>
+            <span class="stat-label">Tiempo activo</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CONTACT FORM -->
+      <section id="contact" class="bento-card bento-contact">
+        <div class="spotlight"></div>
+        <h3 class="card-title"><i class="fa-solid fa-envelope"></i> Contacto Premium</h3>
+        <form id="contact-form" class="contact-form" action="#" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="contact-name" class="form-input" placeholder=" " required />
+              <label for="contact-name" class="form-label">Nombre Completo</label>
+              <span class="input-glow"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="contact-email" class="form-input" placeholder=" " required />
+              <label for="contact-email" class="form-label">Correo Electrónico</label>
+              <span class="input-glow"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea id="contact-message" class="form-input text-area" placeholder=" " required></textarea>
+            <label for="contact-message" class="form-label">Mensaje</label>
+            <span class="input-glow"></span>
+          </div>
+          <button type="submit" id="contact-submit" class="btn primary-btn ripple-btn contact-btn magnet-btn">
+            <span>Enviar Mensaje</span> <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+        <div id="contact-feedback" class="contact-feedback" aria-live="polite"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- LIGHTBOX PREVIEW MODAL -->
+  <div id="lightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Visualizador de Galería">
+    <button class="lightbox-close" id="lightbox-close-btn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav prev" id="lightbox-prev-btn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    
+    <div class="lightbox-content" id="lightbox-content-box">
+      <!-- Media will be dynamically loaded here -->
+    </div>
+    
+    <button class="lightbox-nav next" id="lightbox-next-btn" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-caption" id="lightbox-caption-text">Descripción de la imagen</div>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a id="whatsapp-float" href="https://wa.me/51934731851" target="_blank" rel="noopener noreferrer" class="whatsapp-float magnet-btn" aria-label="Chat directo por WhatsApp" title="Escríbeme en WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-pulse"></span>
+  </a>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Volver arriba" title="Subir">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- FLOATING AI CHATBOT SYSTEM ("DAMIKUS AI") -->
+  <div id="ai-chat-widget" class="ai-chat-widget">
+    <button id="chat-toggle" class="chat-trigger magnet-btn" aria-label="Abrir asistente inteligente Damikus AI" title="Damikus AI">
+      <i class="fa-solid fa-comment-dots"></i>
+      <span class="chat-alert-dot"></span>
+    </button>
+    
+    <div class="chat-window" id="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-bot-info">
+          <div class="chat-avatar-box">
+            <span class="chat-bot-avatar">🤖</span>
+            <span class="chat-online-dot"></span>
+          </div>
+          <div class="chat-bot-name">
+            <h4 id="chatbot-name-title">Damikus AI</h4>
+            <p class="chat-status-sub">Asistente Virtual</p>
+          </div>
+        </div>
+        <button id="chat-close" class="chat-close-btn" aria-label="Cerrar chat"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <div class="chat-body" id="chat-messages-container">
+        <div class="chat-msg bot-msg">
+          <p id="chat-welcome-text">¡Hola! Soy el asistente digital de Damikus. ¿En qué puedo ayudarte?</p>
+        </div>
+      </div>
+
+      <!-- Quick choices / suggestion chips -->
+      <div class="chat-chips-scroll">
+        <div class="chat-chips" id="chat-suggest-chips">
+          <!-- Populated from chatbot.json -->
+        </div>
+      </div>
+      
+      <div class="chat-footer">
+        <input type="text" id="chat-input" class="chat-input" placeholder="Pregúntame algo..." aria-label="Escribe tu mensaje..." />
+        <button id="chat-send" class="chat-send-btn" aria-label="Enviar"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js" defer></script>
+</body>
+</html>

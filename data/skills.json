@@ -1,0 +1,29 @@
+[
+  {
+    "category": "Diseño & Modelado Estructural",
+    "items": [
+      {"name": "AutoCAD / Civil 3D", "level": 95},
+      {"name": "Revit BIM (Structural)", "level": 90},
+      {"name": "SAP2000 & ETABS", "level": 85},
+      {"name": "Modelado Estructural 3D", "level": 90}
+    ]
+  },
+  {
+    "category": "Gestión de Obras & Planificación",
+    "items": [
+      {"name": "MS Project / Primavera", "level": 90},
+      {"name": "Presupuestos & Metrados (S10)", "level": 95},
+      {"name": "Supervisión de Campo", "level": 85},
+      {"name": "Normas Técnicas de Edificación", "level": 95}
+    ]
+  },
+  {
+    "category": "Geotecnia & Hidrología",
+    "items": [
+      {"name": "Mecánica de Suelos", "level": 80},
+      {"name": "Estudios Hidrológicos (HEC-RAS)", "level": 75},
+      {"name": "ArcGIS / Sistemas SIG", "level": 80},
+      {"name": "Seguridad en Obras (SST)", "level": 90}
+    ]
+  }
+]

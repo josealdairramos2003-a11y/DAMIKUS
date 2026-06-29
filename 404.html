@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página No Encontrada | Damikus Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body.error-page-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #0b0b0b;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+    .error-container {
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      padding: 2.5rem;
+      border-radius: 24px;
+      background: rgba(26, 26, 26, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      max-width: 500px;
+      width: 90%;
+      animation: errorFadeIn 0.8s ease-out forwards;
+    }
+    @keyframes errorFadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+      letter-spacing: -2px;
+      animation: pulseGlow 3s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from { text-shadow: 0 0 30px rgba(168, 85, 247, 0.2); }
+      to { text-shadow: 0 0 50px rgba(168, 85, 247, 0.5); }
+    }
+    .error-title {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    .error-msg {
+      color: #9e9e9e;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .error-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .error-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="theme-purple dark-mode error-page-body">
+
+  <canvas id="error-canvas" class="error-canvas"></canvas>
+
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Vórtice Espacial Detectado</h1>
+    <p class="error-msg">Te has salido de la órbita de Damikus Web. La página que estás buscando no existe, ha sido movida o está en otra dimensión temporal.</p>
+    
+    <div class="error-actions">
+      <a href="index.html" class="btn primary-btn ripple-btn magnet-btn">
+        <i class="fa-solid fa-house"></i> Volver a la Tierra
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Simple GPU-friendly particle background for 404
+    const canvas = document.getElementById('error-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let particles = [];
+    const particleCount = 60;
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 0.4 - 0.2;
+        this.speedY = Math.random() * 0.4 - 0.2;
+        this.alpha = Math.random() * 0.5 + 0.3;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = `rgba(168, 85, 247, ${this.alpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    function init() {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw a subtle radial neon gradient background
+      const grad = ctx.createRadialGradient(
+        canvas.width / 2, canvas.height / 2, 10,
+        canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height) / 1.5
+      );
+      grad.addColorStop(0, '#120d20');
+      grad.addColorStop(1, '#0b0b0b');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    
+    init();
+    animate();
+  </script>
+</body>
+</html>

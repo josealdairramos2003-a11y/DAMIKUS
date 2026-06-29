@@ -1,0 +1,54 @@
+{
+  "system": {
+    "name": "Damikus AI",
+    "welcome": "¡Hola! Soy el asistente digital de Damikus. ¿Tienes alguna consulta sobre mis proyectos de ingeniería civil, cálculo estructural o mi disponibilidad para consultorías?",
+    "fallback": "Buena pregunta. Como soy un asistente digital predefinido para obras civiles, te sugiero que me preguntes sobre '¿Quién eres?', '¿Qué servicios ofreces?', '¿Dónde estudiaste?' o '¿Cómo te contacto?'."
+  },
+  "qa": [
+    {
+      "trigger": "¿Quién eres?",
+      "keywords": ["quien", "quien eres", "sobre ti", "presentate", "damikus"],
+      "response": "Soy Damikus, Ingeniero Civil y Gestor de Proyectos (Project Manager). Me especializo en diseño estructural, modelado BIM y la supervisión de proyectos de infraestructura viales, habitacionales e hidráulicas."
+    },
+    {
+      "trigger": "¿Cómo te contacto?",
+      "keywords": ["contacto", "correo", "email", "telefono", "whatsapp", "escribir"],
+      "response": "Puedes contactarme directamente a través de mi correo oficial contacto@damikus.web o enviarme un mensaje por WhatsApp usando el botón flotante verde de la esquina. ¡Conversemos sobre tu obra!"
+    },
+    {
+      "trigger": "¿Qué proyectos hiciste?",
+      "keywords": ["proyectos", "obras", "construcciones", "estructuras", "puente", "edificio"],
+      "response": "He participado en hitos importantes como el diseño estructural del Puente Atirantado San Martín, el estudio de cimentaciones del Edificio Corporativo Lomas y la planificación hidráulica de la Presa de Embalse Río Seco."
+    },
+    {
+      "trigger": "¿Qué servicios ofreces?",
+      "keywords": ["servicios", "trabajo", "asesoria", "diseño", "calculo", "presupuesto", "obras"],
+      "response": "Ofrezco servicios profesionales de cálculo de estructuras de concreto y acero, modelado BIM estructural en Revit, elaboración de expedientes técnicos (metrados, costos y presupuestos) y supervisión técnica de obras civiles."
+    },
+    {
+      "trigger": "¿Qué software utilizas?",
+      "keywords": ["software", "programas", "sap2000", "revit", "autocad", "etabs"],
+      "response": "Utilizo herramientas líderes en el sector de la construcción: AutoCAD y Civil 3D para planos viales, Revit Structural para flujos BIM, SAP2000 y ETABS para el modelado por elementos finitos y diseño sísmico, y MS Project para cronogramas."
+    },
+    {
+      "trigger": "¿Dónde estudiaste?",
+      "keywords": ["estudios", "universidad", "estudiaste", "titulo", "carrera", "educacion"],
+      "response": "Me gradué en Ingeniería Civil en Madrid y cuento con certificaciones avanzadas en metodologías BIM de Autodesk y en Gerencia de Proyectos de Construcción certificada bajo lineamientos del PMI."
+    },
+    {
+      "trigger": "¿Cuánto cuesta un diseño?",
+      "keywords": ["precio", "costo", "presupuesto", "cobras", "tarifa", "cotizacion"],
+      "response": "Las tarifas varían según la complejidad estructural, el área en metros cuadrados y el alcance técnico del expediente. Escríbeme detallando tu proyecto y te enviaré una cotización personalizada sin compromiso."
+    },
+    {
+      "trigger": "¿Trabajas remoto?",
+      "keywords": ["remoto", "distancia", "viajar", "online", "fuera", "internacional"],
+      "response": "Sí, realizo cálculos estructurales y modelado BIM Revit de forma remota para clientes de cualquier país. Para supervisión de obras presenciales, tengo disponibilidad de traslado según la envergadura del proyecto."
+    },
+    {
+      "trigger": "¿Qué haces en tu tiempo libre?",
+      "keywords": ["libre", "ocio", "hobbies", "haces", "gustos", "tiempo"],
+      "response": "En mi tiempo libre me gusta simular planeamiento urbano en Cities: Skylines, leer sobre geotecnia e historia de la arquitectura, entrenar y ver documentales sobre megaestructuras modernas."
+    }
+  ]
+}

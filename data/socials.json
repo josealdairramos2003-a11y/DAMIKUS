@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/danilob.13/",
+    "username": "@damikus.ing",
+    "followers": "4.2K",
+    "icon": "instagram",
+    "color": "#E1306C"
+  },
+  {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/profile.php?id=61570165190434",
+    "username": "Damikus Civil",
+    "followers": "3.5K",
+    "icon": "facebook",
+    "color": "#1877F2"
+  },
+  {
+    "name": "TikTok",
+    "url": "https://www.tiktok.com/@thegreenb13",
+    "username": "@damikus.obras",
+    "followers": "8.1K",
+    "icon": "video",
+    "color": "#00f2fe"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://linkedin.com",
+    "username": "damikus-civil",
+    "followers": "1.8K",
+    "icon": "linkedin",
+    "color": "#0077B5"
+  },
+  {
+    "name": "WhatsApp",
+    "url": "https://wa.me/51934731851",
+    "username": "+51 934 731 851",
+    "followers": "Consultas",
+    "icon": "phone",
+    "color": "#25D366"
+  },
+  {
+    "name": "Email",
+    "url": "mailto:danilosilvarisco@gmail.com",
+    "username": "danilosilvarisco@gmail.com",
+    "followers": "Email Profesional",
+    "icon": "mail",
+    "color": "#ea4335"
+  }
+]

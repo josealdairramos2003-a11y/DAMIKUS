@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Puente Atirantado San Martín",
+    "description": "Modelado BIM y cálculo estructural integral del puente urbano, optimizando la resistencia sísmica mediante pilotes profundos.",
+    "image": "assets/images/project1.jpg",
+    "tags": ["AutoCAD", "Revit BIM", "SAP2000", "Cálculo Estructural"],
+    "github": "#",
+    "demo": "#"
+  },
+  {
+    "title": "Edificio Corporativo Lomas",
+    "description": "Estudio de mecánica de suelos, diseño de cimentaciones reforzadas y supervisión de la estructura de concreto armado de 15 niveles.",
+    "image": "assets/images/project2.jpg",
+    "tags": ["Estudio de Suelos", "ETABS", "Concreto Armado", "Gestión de Obras"],
+    "github": "#",
+    "demo": "#"
+  },
+  {
+    "title": "Presa de Embalse Río Seco",
+    "description": "Estudio hidrológico, diseño hidráulico y planificación del cronograma de ejecución para la presa de regulación hídrica de 50 metros.",
+    "image": "assets/images/project3.jpg",
+    "tags": ["Hidrología", "ArcGIS", "Civil 3D", "MS Project"],
+    "github": "#",
+    "demo": "#"
+  }
+]

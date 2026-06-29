@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Inspección de Cimentación",
+    "type": "image",
+    "src": "assets/gallery/setup.jpg",
+    "category": "Trabajo",
+    "description": "Verificación del acero de refuerzo en zapatas antes del vaciado de concreto."
+  },
+  {
+    "title": "Topografía en Terreno",
+    "type": "image",
+    "src": "assets/gallery/urban.jpg",
+    "category": "Viajes",
+    "description": "Levantamiento topográfico con estación total en zona montañosa."
+  },
+  {
+    "title": "Coordinación BIM",
+    "type": "image",
+    "src": "assets/gallery/code.jpg",
+    "category": "Trabajo",
+    "description": "Sesión de detección de interferencias en modelo Revit 3D."
+  },
+  {
+    "title": "Hormigonado de Losa",
+    "type": "image",
+    "src": "assets/gallery/concert.jpg",
+    "category": "Eventos",
+    "description": "Supervisión del vaciado de concreto premezclado en losa de entrepiso."
+  },
+  {
+    "title": "Obra Vial Finalizada",
+    "type": "image",
+    "src": "assets/gallery/coast.jpg",
+    "category": "Viajes",
+    "description": "Tramo carretero habilitado tras pruebas de pavimentación."
+  },
+  {
+    "title": "Reunión de Residentes",
+    "type": "image",
+    "src": "assets/gallery/friends.jpg",
+    "category": "Amigos",
+    "description": "Celebrando el fin de obra con el equipo técnico y operarios."
+  }
+]

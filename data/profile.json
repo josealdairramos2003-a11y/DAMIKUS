@@ -1,0 +1,39 @@
+{
+  "personal": {
+    "name": "Damikus",
+    "avatar": "assets/images/profile.jpg",
+    "profession": "Ingeniero Civil & Project Manager",
+    "professionsList": ["Ingeniero Civil", "Calculista Estructural", "Gestor de Obras", "Modelador BIM", "Supervisor de Proyectos"],
+    "bio": "Ingeniero Civil apasionado por el diseño estructural, la planificación de obras viales e hidráulicas y la gestión eficiente de proyectos de infraestructura de uso cotidiano.",
+    "age": 27,
+    "birthday": "25 de Noviembre",
+    "location": "Madrid, España",
+    "latitude": 40.416775,
+    "longitude": -3.703790,
+    "timezone": "Europe/Madrid",
+    "status": {
+      "text": "Planificando nueva obra",
+      "type": "coding",
+      "dot": "online"
+    },
+    "stats": {
+      "daysSinceStart": 2190,
+      "yearsCoding": 6,
+      "clients": 38,
+      "followers": "8.4K",
+      "coffees": 1820
+    }
+  },
+  "universo": {
+    "movie": "Megaestructuras",
+    "series": "How It's Made",
+    "anime": "Dr. Stone",
+    "game": "SimCity / Cities: Skylines",
+    "food": "Parrillada",
+    "drink": "Café Americano ☕",
+    "color": "Azul Eléctrico & Gris Cemento",
+    "quote": "Diseñamos estructuras para resistir fuerzas, pero construimos espacios para vivir historias.",
+    "emoji": "🏗️",
+    "birthdayText": "25 Nov (Sagitario)"
+  }
+}
