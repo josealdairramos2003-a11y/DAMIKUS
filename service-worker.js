@@ -1,4 +1,4 @@
-const CACHE_NAME = 'damikus-cache-v10';
+const CACHE_NAME = 'damikus-cache-v12';
 const ASSETS_TO_CACHE = [
   'index.html',
   '404.html',

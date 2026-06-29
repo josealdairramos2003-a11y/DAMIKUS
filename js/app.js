@@ -1228,59 +1228,25 @@ document.addEventListener('DOMContentLoaded', () => {
     return state.chatbot.system.fallback;
   }
 
-  // QR Code generator using API fallback or simple canvas rendering
+  // QR Code generator using a high-quality online scannable QR API
   function generateQR() {
     const container = document.getElementById('qr-code-canvas-container');
     if (!container) return;
     
-    // Renders a high-quality visual representation of a QR using canvas to avoid dependencies
-    const canvas = document.createElement('canvas');
-    canvas.width = 120;
-    canvas.height = 120;
-    const ctx = canvas.getContext('2d');
+    // Set the QR code target to your official Vercel domain
+    const currentUrl = 'https://damikus.vercel.app/';
     
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(0, 0, 120, 120);
+    // Create an image element pointing to qrserver API
+    const qrImg = document.createElement('img');
+    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}&color=000000&bgcolor=ffffff&margin=10`;
+    qrImg.alt = "Código QR de Damikus Web";
+    qrImg.className = "qr-code-image";
+    qrImg.style.width = "100%";
+    qrImg.style.height = "100%";
+    qrImg.style.borderRadius = "8px";
     
-    // Draw outer blocks
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(10, 10, 30, 30);
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(15, 15, 20, 20);
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(20, 20, 10, 10);
-    
-    ctx.fillRect(80, 10, 30, 30);
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(85, 15, 20, 20);
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(90, 20, 10, 10);
-    
-    ctx.fillRect(10, 80, 30, 30);
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(15, 85, 20, 20);
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(20, 90, 10, 10);
-    
-    // Fill remaining bytes with randomized visual QR noise
-    ctx.fillStyle = '#000000';
-    for (let x = 45; x < 75; x += 5) {
-      for (let y = 10; y < 110; y += 5) {
-        if (Math.random() > 0.45) ctx.fillRect(x, y, 4, 4);
-      }
-    }
-    for (let x = 10; x < 45; x += 5) {
-      for (let y = 45; y < 75; y += 5) {
-        if (Math.random() > 0.45) ctx.fillRect(x, y, 4, 4);
-      }
-    }
-    for (let x = 75; x < 110; x += 5) {
-      for (let y = 45; y < 110; y += 5) {
-        if (Math.random() > 0.45) ctx.fillRect(x, y, 4, 4);
-      }
-    }
-    
-    container.appendChild(canvas);
+    container.innerHTML = '';
+    container.appendChild(qrImg);
   }
 
   // Web Share & Link Copy Actions
